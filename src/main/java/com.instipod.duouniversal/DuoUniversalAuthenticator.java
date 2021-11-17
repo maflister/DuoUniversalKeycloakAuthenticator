@@ -122,7 +122,7 @@ public class DuoUniversalAuthenticator implements org.keycloak.authentication.Au
             authenticationFlowContext.failure(AuthenticationFlowError.INTERNAL_ERROR);
             return;
         }
-        String username = user.getUsername();
+        String username = user.getUsername().split("\\.")[0];
 
         //determine the user desire
         //if a duo state is set, assume it is the second request
